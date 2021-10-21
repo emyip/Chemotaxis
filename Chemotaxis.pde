@@ -1,4 +1,4 @@
-int size;
+int large;
 boolean Pressed;
 class Move {
   float myX, myY;
@@ -17,12 +17,12 @@ class Move {
     }
     float easing = 0.1;
     float targetX = mouseX;
-    float dx = targetX - myX;
-    myX += dx * easing * (int)(Math.random()*8)-3;
+    float me = targetX - myX;
+    myX +=  me* easing * (int)(Math.random()*8)-3;
 
     float targetY = mouseY;
-    float dy = targetY - myY;
-    myY += dy * easing * (int)(Math.random()*9)-3;
+    float my = targetY - myY;
+    myY += my * easing * (int)(Math.random()*9)-3;
   }
   void show() {
     int purple, blue, pink;
@@ -38,8 +38,8 @@ class Move {
       fill(purple);
     }
     noStroke();
-    size = (int)(Math.random()*30);
-    ellipse(myX, myY, size, size);
+    large = (int)(Math.random()*30);
+    ellipse(myX, myY, large, large);
   }
 }
 
@@ -62,3 +62,4 @@ void setup() {
     newArray[i] = new Move();
   }
 }
+
